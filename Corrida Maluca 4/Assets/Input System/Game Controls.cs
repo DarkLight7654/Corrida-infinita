@@ -22,9 +22,63 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     {
         asset = InputActionAsset.FromJson(@"{
     ""name"": ""Game Controls"",
-    ""maps"": [],
+    ""maps"": [
+        {
+            ""name"": ""Player"",
+            ""id"": ""841c7737-fb2e-40ad-b0a5-f9e4ad959e5d"",
+            ""actions"": [
+                {
+                    ""name"": ""Locomotion"",
+                    ""type"": ""Value"",
+                    ""id"": ""8820513b-27c5-490e-85cf-7132c5240df0"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""a847b20a-25b6-45f7-98b5-ba93e5bbe25e"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Locomotion"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b18c1140-512f-484c-8fd0-ea4d2b5f408e"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Locomotion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8a0d105c-68e7-4559-ba24-461332d8eb43"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Locomotion"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
+        }
+    ],
     ""controlSchemes"": []
 }");
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Locomotion = m_Player.FindAction("Locomotion", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -79,5 +133,42 @@ public partial class @GameControls : IInputActionCollection2, IDisposable
     public int FindBinding(InputBinding bindingMask, out InputAction action)
     {
         return asset.FindBinding(bindingMask, out action);
+    }
+
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_Locomotion;
+    public struct PlayerActions
+    {
+        private @GameControls m_Wrapper;
+        public PlayerActions(@GameControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Locomotion => m_Wrapper.m_Player_Locomotion;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
+        {
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            {
+                @Locomotion.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLocomotion;
+                @Locomotion.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLocomotion;
+                @Locomotion.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLocomotion;
+            }
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Locomotion.started += instance.OnLocomotion;
+                @Locomotion.performed += instance.OnLocomotion;
+                @Locomotion.canceled += instance.OnLocomotion;
+            }
+        }
+    }
+    public PlayerActions @Player => new PlayerActions(this);
+    public interface IPlayerActions
+    {
+        void OnLocomotion(InputAction.CallbackContext context);
     }
 }
