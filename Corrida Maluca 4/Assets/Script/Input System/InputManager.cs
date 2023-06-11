@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ImputManager : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
-
     [SerializeField] private GameControls _gameControls;
 
     private void Awake() {
@@ -24,4 +23,6 @@ public class ImputManager : MonoBehaviour
     {
         get{return _gameControls; }
     }
+
+    
 }
