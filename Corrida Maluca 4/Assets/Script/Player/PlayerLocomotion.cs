@@ -8,6 +8,8 @@ public class PlayerLocomotion : MonoBehaviour
 {
     [SerializeField] private float _walkSpeed;
 
+    [SerializeField] private int speed;
+
     [SerializeField] private CharacterController _characterController;
 
     [SerializeField] private InputManager _inputManager;
@@ -23,6 +25,10 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void Update()
     {
+        Vector3 direction = Vector3.forward * speed;
+
+        _characterController.Move(direction * Time.deltaTime);
+
         Walk();
         ApplyGravity();
     }
