@@ -8,7 +8,7 @@ public class PlayerLocomotion : MonoBehaviour
 {
     [SerializeField] private float _walkSpeed;
 
-    [SerializeField] private int speed;
+    [SerializeField] private int _speed;
 
     [SerializeField] private CharacterController _characterController;
 
@@ -18,23 +18,34 @@ public class PlayerLocomotion : MonoBehaviour
 
     [SerializeField] private float _gravityMultiplier= 1f; 
     [SerializeField] private float _jumpForce;
+    
+    [SerializeField] private float _rayRadius;
+    [SerializeField] private LayerMask _layer;
+    [SerializeField] private LayerMask _layercoin;
+    [SerializeField] private Animator _animation;
 
     private float _velocityY;
     private Vector3 newDirection;
+    public bool _isDead;
+    private GameController _gc;
+    
     
 
     private void Update()
     {
-        Vector3 direction = Vector3.forward * speed;
+        Vector3 direction = Vector3.forward * _speed;
 
         _characterController.Move(direction * Time.deltaTime);
 
         Walk();
         ApplyGravity();
+        OnCollision();
+        
     }
     private void Start() 
     {
         _inputManager.GameControls.Player.Jump.performed += Jump;
+        _isDead = false;
     }
 
     private void Walk()
@@ -65,6 +76,34 @@ public class PlayerLocomotion : MonoBehaviour
         if(_characterController.isGrounded)
         {
             _velocityY += _jumpForce;
+        }
+    }
+
+    //metodo para verificar se o player colidio com algo
+    private void OnCollision()
+    {
+        RaycastHit hit;
+        //if passando como parametro como uma posição de origem e destido(e no destino ele passa o numero 1) e no final ele passa o tamanho
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _rayRadius, _layer) && !_isDead)
+        {
+             //Game over
+            _animation.SetTrigger("Die");
+            _walkSpeed = 0;
+            _speed = 0;
+            _jumpForce = 0;
+            _isDead = true;
+            Debug.Log("Morreu ! :))");
+
+
+        }
+
+        RaycastHit hitcoin;
+
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward + new Vector3(0,3,0)), out hitcoin, _rayRadius, _layercoin))
+        {
+             //moeda
+             _gc.AddCoin();
+            Destroy(hitcoin.transform.gameObject); 
         }
     }
     
