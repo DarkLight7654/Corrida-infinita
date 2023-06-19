@@ -99,7 +99,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         RaycastHit hitcoin;
 
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward + new Vector3(0,3,0)), out hitcoin, _rayRadius, _layercoin))
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward + new Vector3(0,1,0)), out hitcoin, _rayRadius, _layercoin))
         {
              //moeda
              _gc.AddCoin();

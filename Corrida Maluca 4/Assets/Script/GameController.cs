@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
 
-    public Text _scoreText;
+    public TMP_Text _scoreText;
     public float _score;
     private PlayerLocomotion _player;
 
     public int _coinScore;
-    public Text _coinText;
+    public TMP_Text _coinText;
     // Start is called before the first frame update
     void Start()
     {
