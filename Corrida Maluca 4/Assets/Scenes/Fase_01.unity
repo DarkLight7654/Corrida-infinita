@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.023000002, y: 0.89337045}
   m_AnchorMax: {x: 0.19067052, y: 0.96314824}
-  m_AnchoredPosition: {x: -1.1000061, y: -0.5999985}
+  m_AnchoredPosition: {x: -1.1000366, y: -0.6000061}
   m_SizeDelta: {x: 142, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &39694820
@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 196.5, y: -22.4}
+  m_AnchoredPosition: {x: 196.5, y: -22.399994}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120802380
@@ -746,7 +746,11 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 8
+  _layercoin:
+    serializedVersion: 2
+    m_Bits: 64
   _animation: {fileID: 857775938}
+  _isDead: 0
 --- !u!95 &857775938 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9036980633323257398, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
@@ -823,7 +827,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 526734577940527049, guid: cbc68c7de4fa6fe42b2e94078e74b0c2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287593979233859751, guid: cbc68c7de4fa6fe42b2e94078e74b0c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbc68c7de4fa6fe42b2e94078e74b0c2, type: 3}
@@ -1223,7 +1231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.80358374, y: 0.89337045}
   m_AnchorMax: {x: 0.97434103, y: 0.9492593}
-  m_AnchoredPosition: {x: -1.1000061, y: 0.9000015}
+  m_AnchoredPosition: {x: -1.0999756, y: 0.8999939}
   m_SizeDelta: {x: 141, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433448173
@@ -1512,6 +1520,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreText: {fileID: 120802380}
   _score: 0
+  _coinScore: 0
+  _coinText: {fileID: 0}
 --- !u!4 &2099849730
 Transform:
   m_ObjectHideFlags: 0
