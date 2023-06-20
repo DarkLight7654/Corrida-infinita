@@ -93,6 +93,7 @@ public class PlayerLocomotion : MonoBehaviour
             _jumpForce = 0;
             _isDead = true;
             Debug.Log("Morreu ! :))");
+            GameManager.Instance.SceneLoadManager.LoadScene("GameOver");
 
 
         }
