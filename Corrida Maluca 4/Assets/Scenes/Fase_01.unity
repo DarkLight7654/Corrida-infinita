@@ -260,37 +260,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39694818}
   m_CullTransparentMesh: 1
---- !u!1 &74450483
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 74450484}
-  m_Layer: 0
-  m_Name: obstaculo8
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &74450484
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 74450483}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &120802378
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,16 +372,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleList:
-  - {fileID: 6178878938568811072, guid: 4ae6726f13058504a917c326c2baf76b, type: 3}
-  - {fileID: 6453225384271401413, guid: 12a1966d7ff6f354083ea63373b7856b, type: 3}
-  - {fileID: 7902309493631215318, guid: 610c2332fb2019e4cb24bdefb7fd6ddf, type: 3}
-  - {fileID: 4697406914644665566, guid: cb816080513a1f1498d78d12430cc4e5, type: 3}
-  - {fileID: 6901346990249831669, guid: c669536a57f9fe347aabfa7ab61136b7, type: 3}
-  - {fileID: 4810244854466898433, guid: 581d5d87dbe87384bb8ca6a7c940669d, type: 3}
-  - {fileID: 6106268299353121858, guid: bf688759d35b8a04fa5a7b24fe0566df, type: 3}
-  - {fileID: 8057643403336266205, guid: dcca43b2e6a8274438991bca421e3be2, type: 3}
-  - {fileID: 7622272257971356440, guid: c5ce18566ae3d6040aa6a3ab48f335be, type: 3}
-  - {fileID: 8547370875120922235, guid: 6af557127499a864e9f15a4daa7e2814, type: 3}
+  - {fileID: 4771666446091991867, guid: bb0b522cdfec99f449ad54340385811c, type: 3}
+  - {fileID: 7215233475316856235, guid: ae7aeb15044ebe3418c37b395e0c2891, type: 3}
+  - {fileID: 5525844522370114068, guid: fd8826c984a219b489c8a2b0cbc117ee, type: 3}
+  - {fileID: 4702674807349111795, guid: 3a3ecb5461185b241a3dc584f39d5126, type: 3}
+  - {fileID: 747707534028330484, guid: eec417bf05a1568439e2ece0a4f65762, type: 3}
+  - {fileID: 5425751573310727089, guid: ec0c7d60ee8c9b0458ad8c958ba521c9, type: 3}
+  - {fileID: 875533732294195662, guid: 6017e6e0a0e67634993b27b4d9fbd1aa, type: 3}
+  - {fileID: 6296721294746836420, guid: 5a832305b7801044cba716b42b641405, type: 3}
+  - {fileID: 7969116377775336186, guid: 2a268e0088cdc824593be119a4c93178, type: 3}
+  - {fileID: 2534253318072270830, guid: fc701cb6670769a4e82089c57b1f813f, type: 3}
 --- !u!4 &155366101
 Transform:
   m_ObjectHideFlags: 0
@@ -547,37 +516,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &522506184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 522506185}
-  m_Layer: 0
-  m_Name: obstaculo6
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &522506185
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522506184}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &627417083
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,37 +668,6 @@ Transform:
   - {fileID: 2098733749}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &753406652
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 753406653}
-  m_Layer: 0
-  m_Name: obstaculo10
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &753406653
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753406652}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &783634600 stripped
 GameObject:
@@ -1489,68 +1396,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 22.746721, y: 3.330724, z: 22.849913}
   m_Center: {x: -0.26755098, y: 1.665362, z: -0.4660383}
---- !u!1 &1932873440
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1932873441}
-  m_Layer: 0
-  m_Name: obstaculo7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1932873441
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932873440}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1943379440
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1943379441}
-  m_Layer: 0
-  m_Name: obstaculo9
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1943379441
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943379440}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1974614806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1766,7 +1611,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2829864727677644738, guid: cbc68c7de4fa6fe42b2e94078e74b0c2, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2829864727677644738, guid: cbc68c7de4fa6fe42b2e94078e74b0c2, type: 3}
       propertyPath: m_LocalPosition.x
