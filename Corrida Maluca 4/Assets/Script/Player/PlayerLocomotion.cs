@@ -3,32 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerLocomotion : MonoBehaviour
 {
-    [SerializeField] private float _walkSpeed;
-
-    [SerializeField] private int _speed;
-
-    [SerializeField] private CharacterController _characterController;
-
-    [SerializeField] private InputManager _inputManager;
     
-    [SerializeField] private float _gravityScale = -9.81f;
 
+    [Header("Inputs do Player")]
+    [SerializeField] private CharacterController _characterController;
+    [SerializeField] private InputManager _inputManager;
+    [SerializeField] private Animator _animation;
+
+    [Header("Controle")]
+    [SerializeField] private int _speed;
+    [SerializeField] private float _walkSpeed;
+    [SerializeField] private float _gravityScale = -9.81f;
     [SerializeField] private float _gravityMultiplier= 1f; 
     [SerializeField] private float _jumpForce;
-    
-    [SerializeField] private float _rayRadius;
+
+    [Header("Layers")]
     [SerializeField] private LayerMask _layer;
     [SerializeField] private LayerMask _layercoin;
-    [SerializeField] private Animator _animation;
+
+    [Header("Chão")]
+    private float _maxDistance;
+    [SerializeField]private LayerMask _groundLayer;
+    private bool _isGrounded;
 
     private float _velocityY;
     private Vector3 newDirection;
     public bool _isDead;
     private GameController _gc;
-    
+    [SerializeField] private float _rayRadius;
     
 
     private void Update()
@@ -40,11 +46,12 @@ public class PlayerLocomotion : MonoBehaviour
         Walk();
         ApplyGravity();
         OnCollision();
-        
+       
     }
     private void Start() 
     {
-        _inputManager.GameControls.Player.Jump.performed += Jump;
+        _inputManager.OnJumpActive += Jump;
+        //_inputManager.GameControls.Player.Jump.performed += Jump;
         _isDead = false;
     }
 
@@ -71,12 +78,19 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
-    private void Jump(InputAction.CallbackContext ctx)
+    private void Jump()
     {
-        if(_characterController.isGrounded)
+        
+        if(_isGrounded)
         {
+            Debug.Log("Pulando");
             _velocityY += _jumpForce;
         }
+    }
+
+    private void GroundCheck()
+    {
+        _isGrounded = Physics.Raycast(transform.position, Vector3.down, _maxDistance, _groundLayer);
     }
 
     //metodo para verificar se o player colidio com algo
