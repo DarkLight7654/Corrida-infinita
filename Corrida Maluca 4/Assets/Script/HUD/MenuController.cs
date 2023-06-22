@@ -12,9 +12,9 @@ public class MenuController : MonoBehaviour
 
     [SerializeField] private AudioSource _audioSourceFx;
 
-    //[Header("Componets")]
-    //[SerializeField] private Slider _fxVolumeSlider;
-    //[SerializeField] private Slider _fxVolumeSlider;
+    
+    [SerializeField] private Slider _fxVolumeSlider;
+    [SerializeField] private Slider _musicVolumeSlider;
 
     private void Start()
     {
