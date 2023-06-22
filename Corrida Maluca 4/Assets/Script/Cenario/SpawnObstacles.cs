@@ -34,7 +34,7 @@ public class SpawnObstacles : MonoBehaviour
                 int randomIndex = Random.Range(0,obstacleList.Count);
                 GameObject obstacle = obstacleList[randomIndex];
                 //                               
-                Instantiate(obstacle, new Vector3(0,-0.25f, lastSpawnZ), Quaternion.identity);
+                Instantiate(obstacle, new Vector3(0,0.05f, lastSpawnZ), Quaternion.identity);
             }
         }
     }
