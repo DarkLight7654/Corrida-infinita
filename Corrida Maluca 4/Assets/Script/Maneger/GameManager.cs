@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [Header("Managers")]
     [SerializeField] private SceneLoadManager _sceneLoadManager;
+    [SerializeField] private AudioManager _audioManager;
 
     private void Awake()
     {
@@ -33,8 +34,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //propiedade que faz com que seja possivel acessar o scene load manager para conseguir fazer atroca de cena.
+    //propiedade/referencia publica  que faz com que seja possivel acessar o scene load manager para conseguir fazer atroca de cena e o audio manager.
     public SceneLoadManager SceneLoadManager => _sceneLoadManager;
+    public AudioManager AudioManager => _audioManager;
 
     // Update is called once per frame
     void Update()

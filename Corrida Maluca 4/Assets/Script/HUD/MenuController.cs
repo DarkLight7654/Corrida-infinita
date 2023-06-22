@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class MenuController : MonoBehaviour
    [SerializeField] private List<GameObject> _layouts;
     //variavel que indica qual layout é ativo primeiro.
     [SerializeField] private int _firstLayout;
+
+    [SerializeField] private AudioSource _audioSourceFx;
+
+    //[Header("Componets")]
+    //[SerializeField] private Slider _fxVolumeSlider;
+    //[SerializeField] private Slider _fxVolumeSlider;
 
     private void Start()
     {
@@ -32,6 +39,7 @@ public class MenuController : MonoBehaviour
     public void EnableLayout(int indexLayout)
     {
         _layouts[indexLayout].gameObject.SetActive(true);
+        GameManager.Instance.AudioManager.PlaySoundEffect(_audioSourceFx,0);
     }
      //metodo desativar layout
     public void DisableLayout(int indexLayout)
@@ -50,5 +58,10 @@ public class MenuController : MonoBehaviour
     public void StartGame()
     {
         GameManager.Instance.SceneLoadManager.LoadScene("Fase_01");
+    }
+
+    public void MuteMusic()
+    {
+        //GameManager.Instance.AudioSource.MuteAudio();
     }
 }
