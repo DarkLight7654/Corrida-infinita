@@ -27,6 +27,8 @@ public class AudioManager : MonoBehaviour
     //metodo para tocar effeitos sonoros
     public void PlaySoundEffect(AudioSource audioSource, int indexFx)
     {
+
+        
         audioSource.clip = _listAudioFx[indexFx];
         audioSource.Play();
     }
@@ -44,7 +46,7 @@ public class AudioManager : MonoBehaviour
 
 
     //metodo para parar a musica
-    private void StopBackgroundMusic()
+    public void StopBackgroundMusic()
     {
         if(_isPlayingMusic)
         {
@@ -80,6 +82,7 @@ public class AudioManager : MonoBehaviour
     {
         _audioSourceMusic.volume = newvolume;
     }
+
 
     // Start is called before the first frame update
     void Start()

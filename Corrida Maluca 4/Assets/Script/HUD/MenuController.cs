@@ -20,7 +20,11 @@ public class MenuController : MonoBehaviour
 
     private void Awake()
     {
-        //_musicVolumeSlider;
+        _musicVolumeSlider.onValueChanged.AddListener(delegate
+        {
+            GameManager.Instance.AudioManager.UpdateMusicVolume(_musicVolumeSlider.value);
+        });
+
     }
 
     private void Start()
@@ -48,7 +52,7 @@ public class MenuController : MonoBehaviour
     public void EnableLayout(int indexLayout)
     {
         _layouts[indexLayout].gameObject.SetActive(true);
-        GameManager.Instance.AudioManager.PlaySoundEffect(_audioSourceFx,0);
+        //GameManager.Instance.AudioManager.PlaySoundEffect(_audioSourceFx,0);
     }
      //metodo desativar layout
     public void DisableLayout(int indexLayout)
