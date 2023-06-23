@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using UnityEngine.InputSystem;
 
 public class MenuController : MonoBehaviour
 {
@@ -16,9 +18,16 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Slider _fxVolumeSlider;
     [SerializeField] private Slider _musicVolumeSlider;
 
+    private void Awake()
+    {
+        //_musicVolumeSlider;
+    }
+
     private void Start()
     {
         StartLayout();
+        LoadSliderValue();
+        GameManager.Instance.AudioManager.PlayBackgroundMusic(1);
     }
     
     //metodo para gerenciar a inicialização do layou.
@@ -63,5 +72,12 @@ public class MenuController : MonoBehaviour
     public void MuteMusic()
     {
         //GameManager.Instance.AudioSource.MuteAudio();
+    }
+
+    //atualizar o valor dos slider
+    private void LoadSliderValue()
+    {
+        _fxVolumeSlider.value = 0.5f;
+        _musicVolumeSlider.value = 0.5f;
     }
 }

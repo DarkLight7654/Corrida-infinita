@@ -76,6 +76,11 @@ public class AudioManager : MonoBehaviour
         //_audioSourceMusic.Mute(true);
     }
 
+    public void UpdateMusicVolume(float newvolume)
+    {
+        _audioSourceMusic.volume = newvolume;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

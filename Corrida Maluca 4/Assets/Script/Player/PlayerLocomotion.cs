@@ -53,6 +53,7 @@ public class PlayerLocomotion : MonoBehaviour
         _inputManager.OnJumpActive += Jump;
         //_inputManager.GameControls.Player.Jump.performed += Jump;
         _isDead = false;
+        GameManager.Instance.AudioManager.PlayBackgroundMusic(0);
     }
 
     private void Walk()

@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneLoadManager: {fileID: 1349617500}
+  _audioManager: {fileID: 0}
 --- !u!1 &1349617498
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,4 +570,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 987ae56556bc71545a4cb23a50d33073, type: 3}
   _listAudioMusic:
   - {fileID: 8300000, guid: a89171e7d315e45459b6cfdd5a5545a9, type: 3}
+  - {fileID: 8300000, guid: 29e15f3209c190949b351acaf481f2ec, type: 3}
   _audioSourceMusic: {fileID: 0}
